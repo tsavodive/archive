@@ -1,8 +1,13 @@
 # 사이드바 하단에 표시되는 연락처 아이콘 설정입니다.
 # 필요 없는 항목은 앞에 #을 붙여 주석 처리하면 사라집니다.
 
-- type: github
-  icon: "fab fa-github"
+- type: homepage
+  icon: "fas fa-globe"
+  url: "https://tsavodive.github.io"
+
+- type: youtube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/@mii-out"
 
 - type: email
   icon: "fas fa-envelope"
@@ -12,12 +17,19 @@
   icon: "fas fa-rss"
   noblank: true
 
-# 아래 항목은 필요할 때 주석(#)을 풀고 url을 채우면 추가됩니다.
+# 인스타그램 — 계정 주소가 정해지면 아래 세 줄 앞의 #을 지우고 url만 채우세요.
 #
-# - type: linkedin
-#   icon: 'fab fa-linkedin'
-#   url: ''
+# - type: instagram
+#   icon: "fab fa-instagram"
+#   url: "https://www.instagram.com/계정아이디"
+
+# 그 밖에 필요할 때 쓸 수 있는 예시입니다.
 #
-# - type: twitter
-#   icon: 'fa-brands fa-x-twitter'
-#   url: ''
+# - type: 전화
+#   icon: "fas fa-phone"
+#   noblank: true
+#   url: "tel:042-000-0000"
+#
+# - type: 지도
+#   icon: "fas fa-location-dot"
+#   url: "네이버·카카오 지도의 공유 링크"
