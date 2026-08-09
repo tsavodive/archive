@@ -225,6 +225,7 @@ exclude:
   - README.md
   - LICENSE
   - POSTING_GUIDE.md
+  - WORKLOG.md
   - chirpy_archive_project_handoff.md
   - purgecss.js
   - "*.config.js"
