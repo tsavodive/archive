@@ -1,0 +1,23 @@
+# 사이드바 하단에 표시되는 연락처 아이콘 설정입니다.
+# 필요 없는 항목은 앞에 #을 붙여 주석 처리하면 사라집니다.
+
+- type: github
+  icon: "fab fa-github"
+
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true # 현재 탭에서 열기
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true
+
+# 아래 항목은 필요할 때 주석(#)을 풀고 url을 채우면 추가됩니다.
+#
+# - type: linkedin
+#   icon: 'fab fa-linkedin'
+#   url: ''
+#
+# - type: twitter
+#   icon: 'fa-brands fa-x-twitter'
+#   url: ''
