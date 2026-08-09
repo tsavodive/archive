@@ -29,3 +29,6 @@ assets/js/dist
 *~
 .DS_Store
 Thumbs.db
+
+# 초안은 로컬에만 보관 (공개 저장소에 올라가지 않도록)
+_drafts/
