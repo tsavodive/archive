@@ -143,6 +143,13 @@ main {
     font-size: 1.03rem;
   }
 
+  /* 문단 사이 여백. 부트스트랩 기본값은 1rem 입니다.
+     본문 문단(직계 p)에만 적용해서, 인용문·목록·강조상자 안의
+     문단 간격은 원래대로 두었습니다. */
+  > p {
+    margin-bottom: 1.4rem;
+  }
+
   a {
     &.popup {
       @extend %no-cursor;

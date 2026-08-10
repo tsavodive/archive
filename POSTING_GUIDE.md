@@ -239,6 +239,39 @@ avatar: /assets/img/avatar.jpg
 
 ---
 
+### 문단 사이를 띄우고 싶을 때
+
+**원고에서 빈 줄을 여러 번 눌러도 화면은 달라지지 않습니다.**
+마크다운은 빈 줄이 하나든 셋이든 "문단이 바뀌었다" 하나로만 셉니다.
+
+```markdown
+가나다라.
+
+
+마바사아.
+```
+
+위처럼 빈 줄을 두 번 넣어도 아래와 결과가 같습니다.
+
+```markdown
+가나다라.
+
+마바사아.
+```
+
+간격을 바꾸려면 **모든 글에 한 번에 적용되는 서식**을 고쳐야 합니다.
+`_sass/base/_base.scss` 의 아래 값입니다.
+
+```scss
+.content {
+  > p {
+    margin-bottom: 1.4rem; /* 이 숫자를 키우면 문단 사이가 넓어집니다 */
+  }
+}
+```
+
+---
+
 ## 5. 자주 쓰는 마크다운 문법
 
 ```markdown
@@ -330,6 +363,7 @@ Chirpy 전용 강조 상자:
 | `_layouts/post.html` | 글 머리말 어순을 한국어에 맞게. `게시 (날짜)` → `(날짜) 게시`, `By 이름` → `이름 씀` |
 | `_includes/read-time.html` | `3 분 읽는 시간` → `읽는 시간 3분` |
 | `_sass/pages/_post.scss` | `.post-desc` 를 1rem·회색으로. `#toc-solo-trigger`(모바일 '바로가기') 오른쪽 정렬 |
+| `_sass/base/_base.scss` | 본문 문단 사이 여백을 `.content > p` 로 1rem → 1.4rem |
 | `_data/locales/ko-KR.yml` | `df.archives` 추가, `written_by` 를 `By` → `씀` 으로 |
 
 날짜별 보기(`archives.html` + `ko-KR.yml`)는 **반드시 같이** 고쳐야 합니다.
