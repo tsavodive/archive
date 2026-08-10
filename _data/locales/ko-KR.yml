@@ -83,6 +83,12 @@ df:
   post:
     strftime: "%Y/%m/%d"
     dayjs: "YYYY/MM/DD"
+  # 날짜별 보기(archives)의 '월' 표기.
+  # 동양식으로 월을 먼저 쓰기 때문에 슬래시를 월 뒤에 둡니다 → "08 / 10"
+  # 순서 자체는 _layouts/archives.html 에서 정합니다.
+  archives:
+    strftime: "%m /"
+    dayjs: "MM /"
 
 # categories page
 categories:
