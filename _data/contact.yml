@@ -5,9 +5,12 @@
   icon: "fas fa-globe"
   url: "https://tsavodive.github.io"
 
-- type: youtube
-  icon: "fab fa-youtube"
-  url: "https://www.youtube.com/@mii-out"
+# 유튜브 — 2026-08-10 에 잠시 내렸습니다.
+# 다시 띄우려면 아래 세 줄 앞의 #과 뒤따르는 한 칸을 지우세요.
+#
+# - type: youtube
+#   icon: "fab fa-youtube"
+#   url: "https://www.youtube.com/@mii-out"
 
 - type: email
   icon: "fas fa-envelope"
