@@ -228,7 +228,7 @@ image:
 
 ### 프로필 사진
 
-1. 사진을 `assets/img/avatar.jpg` 로 저장합니다.
+1. 사진을 `assets/img/avatar.jpg` 로 저장합니다. (정사각형 권장, 512x512 정도)
 2. `_config.yml`에서 `avatar:` 줄을 이렇게 바꿉니다.
 
 ```yaml
@@ -236,6 +236,35 @@ avatar: /assets/img/avatar.jpg
 ```
 
 3. 서버를 재시작합니다.
+
+### 브라우저 탭 아이콘(파비콘)
+
+탭에 뜨는 작은 그림입니다. **프로필 사진과 같은 그림을 쓰도록 해 두었습니다.**
+
+사진을 바꾸셨다면 아래 명령 한 줄로 아이콘도 다시 만들면 됩니다.
+`assets/img/avatar.jpg` 를 읽어서 `assets/img/favicons/` 안의 파일 6개를 새로 씁니다.
+
+```powershell
+cd "C:\Users\mln\Desktop\장기프로젝트\개인페이지\archive"
+powershell -File tools\make-favicons.ps1 -src assets\img\avatar.jpg -dir assets\img\favicons
+```
+
+만들어지는 파일과 쓰임새입니다.
+
+| 파일 | 어디에 쓰이나 |
+| --- | --- |
+| `favicon.ico` | 오래된 브라우저·즐겨찾기 (16·32·48px 세 크기가 한 파일에) |
+| `favicon.svg` | 크롬 계열이 **가장 먼저 찾는 파일** |
+| `favicon-96x96.png` | 일반 탭 아이콘 |
+| `apple-touch-icon.png` | 아이폰·아이패드 홈 화면 |
+| `web-app-manifest-192x192.png` / `-512x512.png` | 앱으로 설치했을 때의 아이콘 |
+
+> `favicon.svg` 를 빼먹으면 **다른 파일을 다 바꿔도 크롬에서는 옛 그림이 그대로 보입니다.**
+> 위 명령은 여섯 개를 한꺼번에 만들기 때문에 이런 실수가 나지 않습니다.
+{: .prompt-warning }
+
+바꾼 뒤에도 옛 아이콘이 보이면 브라우저가 오래 캐시하기 때문입니다.
+`Ctrl + Shift + R` 을 누르거나, 탭을 닫았다가 새로 여세요.
 
 ---
 
