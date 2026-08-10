@@ -1,7 +1,7 @@
 ---
 # 이 페이지의 기본 레이아웃은 'page' 입니다.
 icon: fas fa-info-circle
-order: 4
+order: 0 # 0 이면 '전체 글' 보다 위에 옵니다 (_includes/sidebar.html 참고)
 ---
 
 ## 이미린 변호사

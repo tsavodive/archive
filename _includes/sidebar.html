@@ -17,16 +17,34 @@
   <!-- .profile-wrapper -->
 
   <nav class="flex-column flex-grow-1 w-100 ps-0">
-    <ul class="nav">
-      <!-- home -->
+    {%- comment -%}
+      메뉴 순서에 대하여
+
+      '전체 글'(home) 은 _tabs 안에 파일이 없고 이 자리에 직접 적혀 있습니다.
+      그래서 '전체 글' 보다 위에 메뉴를 두려면 그 탭 파일의 order 를 0 으로 주면 됩니다.
+      지금은 _tabs/about.md 가 order: 0 이라 '소개' 가 맨 위에 옵니다.
+      나머지 메뉴는 각 탭 파일의 order 숫자 순서대로 이어집니다.
+    {%- endcomment -%}
+
+    {%- capture home_item -%}
       <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
         <a href="{{ '/' | relative_url }}" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
         </a>
       </li>
-      <!-- the real tabs -->
+    {%- endcapture -%}
+
+    <ul class="nav">
+      {% assign home_placed = false %}
+
+      <!-- the real tabs (order 0 인 탭 → 전체 글 → 나머지) -->
       {% for tab in site.tabs %}
+        {% if home_placed == false and tab.order > 0 %}
+          {{ home_item }}
+          {% assign home_placed = true %}
+        {% endif %}
+
         <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
           <a href="{{ tab.url | relative_url }}" class="nav-link">
             <i class="fa-fw {{ tab.icon }}"></i>
@@ -37,6 +55,9 @@
         </li>
         <!-- .nav-item -->
       {% endfor %}
+
+      {%- comment -%} order 0 인 탭만 있을 때도 '전체 글' 이 빠지지 않도록 {%- endcomment -%}
+      {% if home_placed == false %}{{ home_item }}{% endif %}
     </ul>
   </nav>
 

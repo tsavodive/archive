@@ -367,7 +367,21 @@ Chirpy 전용 강조 상자:
 - `about.md` — 소개 페이지 (자유롭게 수정)
 - `categories.md`, `tags.md`, `archives.md` — 자동 생성 페이지 (수정 불필요)
 
-`order` 숫자가 작을수록 메뉴에서 위에 표시됩니다.
+`order` 숫자가 작을수록 메뉴에서 위에 표시됩니다. 지금 순서는 이렇습니다.
+
+| 메뉴 | 파일 | order |
+| --- | --- | --- |
+| 소개 | `_tabs/about.md` | 0 |
+| 전체 글 | (파일 없음) | — |
+| 주제별 보기 | `_tabs/categories.md` | 1 |
+| 키워드별 보기 | `_tabs/tags.md` | 2 |
+| 날짜별 보기 | `_tabs/archives.md` | 3 |
+
+**'전체 글' 만 파일이 없습니다.** 이 항목은 `_includes/sidebar.html` 에 직접 적혀 있고,
+`order` 가 **0 인 탭들 바로 다음** 자리에 들어갑니다.
+
+- '전체 글' 보다 **위**에 두고 싶으면 → 그 탭의 `order` 를 `0` 으로
+- **아래**에 두고 싶으면 → `1` 이상으로 (숫자 순서대로 나열됩니다)
 
 ---
 
@@ -393,6 +407,7 @@ Chirpy 전용 강조 상자:
 | `_includes/read-time.html` | `3 분 읽는 시간` → `읽는 시간 3분` |
 | `_sass/pages/_post.scss` | `.post-desc` 를 1rem·회색으로. `#toc-solo-trigger`(모바일 '바로가기') 오른쪽 정렬 |
 | `_sass/base/_base.scss` | 본문 문단 사이 여백을 `.content > p` 로 1rem → 1.4rem |
+| `_includes/sidebar.html` | '전체 글' 메뉴를 `order: 0` 인 탭 **뒤**로 옮김 (소개를 맨 위에 두기 위해) |
 | `_data/locales/ko-KR.yml` | `df.archives` 추가, `written_by` 를 `By` → `씀` 으로 |
 
 날짜별 보기(`archives.html` + `ko-KR.yml`)는 **반드시 같이** 고쳐야 합니다.
