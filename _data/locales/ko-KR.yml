@@ -57,9 +57,11 @@ theme:
 # ----- Posts related labels -----
 
 post:
-  written_by: By
-  posted: 게시
-  updated: 업데이트
+  # 아래 세 값은 모두 '이름/날짜 뒤에' 붙습니다.
+  # 어순은 _layouts/post.html 에서 정합니다 (POSTING_GUIDE 7절 참고)
+  written_by: 씀 # "이미린 씀"
+  posted: 게시 # "2026/08/01 게시"
+  updated: 업데이트 # "2026/08/02 업데이트"
   words: 단어
   pageview_measure: 조회
   read_time:

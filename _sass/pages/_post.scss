@@ -19,8 +19,11 @@ header {
   .post-desc {
     @extend %heading;
 
-    font-size: 1.125rem;
+    /* 제목과 게시정보 사이의 한 줄 요약.
+       게시/업데이트 줄(0.85rem)보다는 크고, 원래 크기(1.125rem)보다는 작게. */
+    font-size: 1rem;
     line-height: 1.6;
+    color: var(--text-muted-color);
   }
 
   .post-meta {
@@ -381,6 +384,12 @@ header {
   color: var(--text-muted-color);
   border-color: var(--btn-border-color);
   border-radius: v.$radius-lg;
+
+  /* 좁은 화면(모바일)에서 본문 위에 뜨는 '바로가기' 버튼을 오른쪽으로 보냅니다.
+     button 은 display:block 이어도 폭이 내용만큼만 잡히므로
+     margin-left:auto 로 오른쪽 정렬됩니다. */
+  display: block;
+  margin-left: auto;
 
   @include bp.xl {
     display: none !important;

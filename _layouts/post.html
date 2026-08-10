@@ -21,17 +21,21 @@ script_includes:
     {% endif %}
 
     <div class="post-meta text-muted">
+      {%- comment -%}
+        한국어 어순: 라벨을 날짜 뒤에 둡니다. "2026/08/01 게시"
+      {%- endcomment -%}
+
       <!-- published date -->
       <span>
-        {{ site.data.locales[lang].post.posted }}
         {% include datetime.html date=page.date tooltip=true lang=lang %}
+        {{ site.data.locales[lang].post.posted }}
       </span>
 
       <!-- lastmod date -->
       {% if page.last_modified_at and page.last_modified_at != page.date %}
         <span>
-          {{ site.data.locales[lang].post.updated }}
           {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+          {{ site.data.locales[lang].post.updated }}
         </span>
       {% endif %}
 
@@ -61,7 +65,10 @@ script_includes:
             {% assign authors = page.authors %}
           {% endif %}
 
-          {{ site.data.locales[lang].post.written_by }}
+          {%- comment -%}
+            한국어 어순: 이름을 먼저 쓰고 뒤에 '씀' 을 붙입니다. "이미린 씀"
+            (ko-KR.yml 의 post.written_by 값)
+          {%- endcomment -%}
 
           <em>
             {% if authors %}
@@ -77,6 +84,8 @@ script_includes:
               <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
             {% endif %}
           </em>
+
+          {{ site.data.locales[lang].post.written_by }}
         </span>
 
         <div>

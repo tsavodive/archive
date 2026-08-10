@@ -327,11 +327,19 @@ Chirpy 전용 강조 상자:
 | 파일 | 무엇을 고쳤나 |
 | --- | --- |
 | `_layouts/archives.html` | 날짜를 **월 → 일** 순으로 표시하도록 두 칸의 순서를 바꿈 (원래는 일 → 월) |
-| `_data/locales/ko-KR.yml` | 위와 짝을 맞추려고 `df.archives` 에 `"%m /"` / `"MM /"` 추가 |
+| `_layouts/post.html` | 글 머리말 어순을 한국어에 맞게. `게시 (날짜)` → `(날짜) 게시`, `By 이름` → `이름 씀` |
+| `_includes/read-time.html` | `3 분 읽는 시간` → `읽는 시간 3분` |
+| `_sass/pages/_post.scss` | `.post-desc` 를 1rem·회색으로. `#toc-solo-trigger`(모바일 '바로가기') 오른쪽 정렬 |
+| `_data/locales/ko-KR.yml` | `df.archives` 추가, `written_by` 를 `By` → `씀` 으로 |
 
-두 파일은 **반드시 같이** 고쳐야 합니다. 화면에 처음 그려지는 글자는 `_layouts` 쪽이,
-잠시 뒤 자바스크립트가 다시 그리는 글자는 `ko-KR.yml` 의 `dayjs` 값이 결정하기 때문입니다.
+날짜별 보기(`archives.html` + `ko-KR.yml`)는 **반드시 같이** 고쳐야 합니다.
+화면에 처음 그려지는 글자는 `_layouts` 쪽이, 잠시 뒤 자바스크립트가 다시 그리는 글자는
+`ko-KR.yml` 의 `dayjs` 값이 결정하기 때문입니다.
 한쪽만 고치면 페이지를 열 때 날짜 모양이 한 번 바뀌어 깜빡입니다.
+
+> 글 머리말의 **어순**은 `ko-KR.yml` 이 아니라 `_layouts/post.html` 에서 정합니다.
+> `ko-KR.yml` 은 라벨 글자(`게시`·`업데이트`·`씀`)만 담고 있습니다.
+{: .prompt-info }
 
 ---
 
