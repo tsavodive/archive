@@ -23,21 +23,15 @@ script_includes:
     <div class="post-meta text-muted">
       {%- comment -%}
         한국어 어순: 라벨을 날짜 뒤에 둡니다. "2026/08/01 게시"
+        게시일과 작성자를 한 줄에 둡니다. 사이의 가운데점(·)은
+        _sass/pages/_post.scss 의 `.post-meta span + span::before` 가 붙여 줍니다.
+        두 span 이 나란히 있어야 점이 생기므로 순서를 바꾸지 마세요.
+
+        수정일(page.last_modified_at)은 일부러 표시하지 않습니다.
+        원고에 적는 값이 아니라 _plugins/posts-lastmod-hook.rb 가
+        깃 커밋 이력에서 뽑아내는 값입니다. 다시 보이게 하려면
+        아래 작성자 span 뒤에 같은 모양으로 한 덩이를 넣으면 됩니다.
       {%- endcomment -%}
-
-      <!-- published date -->
-      <span>
-        {% include datetime.html date=page.date tooltip=true lang=lang %}
-        {{ site.data.locales[lang].post.posted }}
-      </span>
-
-      <!-- lastmod date -->
-      {% if page.last_modified_at and page.last_modified_at != page.date %}
-        <span>
-          {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
-          {{ site.data.locales[lang].post.updated }}
-        </span>
-      {% endif %}
 
       {% if page.image %}
         {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
@@ -57,8 +51,15 @@ script_includes:
       {% endif %}
 
       <div class="d-flex justify-content-between">
-        <!-- author(s) -->
-        <span>
+        <div>
+          <!-- published date -->
+          <span>
+            {% include datetime.html date=page.date tooltip=true lang=lang %}
+            {{ site.data.locales[lang].post.posted }}
+          </span>
+
+          <!-- author(s) -->
+          <span>
           {% if page.author %}
             {% assign authors = page.author %}
           {% elsif page.authors %}
@@ -85,8 +86,9 @@ script_includes:
             {% endif %}
           </em>
 
-          {{ site.data.locales[lang].post.written_by }}
-        </span>
+            {{ site.data.locales[lang].post.written_by }}
+          </span>
+        </div>
 
         <div>
           <!-- pageviews -->

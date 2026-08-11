@@ -403,7 +403,7 @@ Chirpy 전용 강조 상자:
 | 파일 | 무엇을 고쳤나 |
 | --- | --- |
 | `_layouts/archives.html` | 날짜를 **월 → 일** 순으로 표시하도록 두 칸의 순서를 바꿈 (원래는 일 → 월) |
-| `_layouts/post.html` | 글 머리말 어순을 한국어에 맞게. `게시 (날짜)` → `(날짜) 게시`, `By 이름` → `이름 씀` |
+| `_layouts/post.html` | 글 머리말 어순을 한국어에 맞게. `게시 (날짜)` → `(날짜) 게시`, `By 이름` → `이름 씀`. **수정일 표시를 없애고** 게시일과 작성자를 한 줄로 합침 |
 | `_includes/read-time.html` | `3 분 읽는 시간` → `읽는 시간 3분` |
 | `_sass/pages/_post.scss` | `.post-desc` 를 1rem·회색으로. `#toc-solo-trigger`(모바일 '바로가기') 오른쪽 정렬 |
 | `_sass/base/_base.scss` | 본문 문단 사이 여백을 `.content > p` 로 1rem → 1.4rem |

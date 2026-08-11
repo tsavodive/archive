@@ -173,15 +173,23 @@ POSTING_GUIDE 2절에 **"카테고리에 이미 있는 말은 태그로 또 달�
 | 항목 | 확정된 모양 | 고친 파일 |
 | --- | --- | --- |
 | 제목 아래 한 줄 요약(`description`) | 1rem·회색. 게시정보(0.85rem)보다 크고 원래(1.125rem)보다 작음 | `_sass/pages/_post.scss` |
-| 게시일 | `2026/08/01 게시` (날짜 → 라벨) | `_layouts/post.html` |
-| 수정일 | `2026/08/10 업데이트` (날짜 → 라벨) | `_layouts/post.html` |
-| 작성자 | `이미린 씀` (이름 → 라벨) | `_layouts/post.html` + `ko-KR.yml` |
+| 게시일·작성자 | `2026/08/01 게시 · 이미린 씀` — **한 줄에 나란히** | `_layouts/post.html` + `ko-KR.yml` |
+| 수정일 | **표시하지 않음** (2026-08-12 부터) | `_layouts/post.html` |
 | 읽는 시간 | `읽는 시간 10분` (라벨 → 숫자) | `_includes/read-time.html` |
 | 모바일 '바로가기' 버튼 | 본문 위 **오른쪽** 정렬 | `_sass/pages/_post.scss` |
 | 본문 문단 사이 여백 | 1rem(부트스트랩 기본) → **1.4rem** | `_sass/base/_base.scss` |
 
 > 문단 여백은 **원고의 빈 줄로는 조절되지 않습니다.** 마크다운은 빈 줄이 하나든 셋이든
 > 문단 구분 하나로만 셉니다. 간격을 바꾸려면 위 `_base.scss` 의 `.content > p` 값을 고치세요.
+
+> **수정일은 원고에 적는 값이 아닙니다.** `_plugins/posts-lastmod-hook.rb` 가
+> **깃 커밋 이력**에서 뽑아냅니다(커밋이 2개 이상인 글에만 붙음). 그래서 원고에서
+> 지울 것이 없고, `_layouts/post.html` 에서 표시를 없애면 모든 글에 한꺼번에 적용됩니다.
+>
+> 가운데점(`·`)은 글자가 아니라 `_sass/pages/_post.scss` 의
+> `.post-meta span + span::before` 가 붙여 줍니다. **두 `<span>` 이 나란히 있어야**
+> 점이 생기므로, 머리말을 다시 손볼 때 순서를 바꾸지 마세요.
+{: .prompt-info }
 
 라벨 글자 자체(`게시`·`업데이트`·`씀`)는 `_data/locales/ko-KR.yml` 의 `post:` 아래에 있습니다.
 **어순은 그 파일이 아니라 `_layouts/post.html` 에서 정합니다.** 라벨만 바꾸면 위치는 그대로입니다.
