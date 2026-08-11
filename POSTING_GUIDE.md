@@ -25,6 +25,14 @@ _posts/2026-08-15-my-first-case.md
 가장 쉬운 방법은 `_drafts/00-글-템플릿.md` 를 복사해서
 `_posts` 폴더에 붙여넣고 이름을 바꾸는 것입니다.
 
+> **글 순서를 정하는 것은 파일 이름이 아니라 front matter 의 `date` 입니다.**
+> 둘이 어긋나면 `date` 가 이깁니다. 주소만 파일 이름에서 만들어집니다.
+> 둘을 같은 날짜로 맞춰 두면 헷갈릴 일이 없습니다.
+>
+> **`date` 를 미래로 적으면 글이 아예 안 올라갑니다.** 조용히 빠지고
+> 오류도 안 납니다. "분명히 올렸는데 안 보인다" 싶으면 `date` 부터 보세요.
+{: .prompt-warning }
+
 ### 2단계 — 글 내용 쓰기
 
 파일 맨 위 `---` 사이 부분을 **front matter** 라고 합니다. 여기가 글의 설정입니다.
@@ -409,6 +417,7 @@ Chirpy 전용 강조 상자:
 | `_sass/base/_base.scss` | 본문 문단 사이 여백을 `.content > p` 로 1rem → 1.4rem |
 | `_includes/sidebar.html` | '전체 글' 메뉴를 `order: 0` 인 탭 **뒤**로 옮김 (소개를 맨 위에 두기 위해) |
 | `_data/locales/ko-KR.yml` | `df.archives` 추가, `written_by` 를 `By` → `씀` 으로 |
+| `_plugins/posts-lastmod-hook.rb` | **훅 전체를 주석 처리해 껐음.** 수정일 집계를 쓰지 않음 |
 
 날짜별 보기(`archives.html` + `ko-KR.yml`)는 **반드시 같이** 고쳐야 합니다.
 화면에 처음 그려지는 글자는 `_layouts` 쪽이, 잠시 뒤 자바스크립트가 다시 그리는 글자는
