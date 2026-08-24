@@ -9,6 +9,7 @@ on:
       - README.md
       - LICENSE
       - POSTING_GUIDE.md
+      - WORKLOG.md
       - chirpy_archive_project_handoff.md
 
   # Actions 탭에서 수동으로도 실행할 수 있습니다.
