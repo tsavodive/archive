@@ -236,11 +236,11 @@ image:
 
 ### 프로필 사진
 
-1. 사진을 `assets/img/avatar.jpg` 로 저장합니다. (정사각형 권장, 512x512 정도)
+1. 사진을 `assets/img/avatar.png` 로 저장합니다. (정사각형 권장, 512x512 정도)
 2. `_config.yml`에서 `avatar:` 줄을 이렇게 바꿉니다.
 
 ```yaml
-avatar: /assets/img/avatar.jpg
+avatar: /assets/img/avatar.png
 ```
 
 3. 서버를 재시작합니다.
@@ -250,11 +250,11 @@ avatar: /assets/img/avatar.jpg
 탭에 뜨는 작은 그림입니다. **프로필 사진과 같은 그림을 쓰도록 해 두었습니다.**
 
 사진을 바꾸셨다면 아래 명령 한 줄로 아이콘도 다시 만들면 됩니다.
-`assets/img/avatar.jpg` 를 읽어서 `assets/img/favicons/` 안의 파일 6개를 새로 씁니다.
+`assets/img/avatar.png` 를 읽어서 `assets/img/favicons/` 안의 파일 6개를 새로 씁니다.
 
 ```powershell
 cd "C:\Users\mln\Desktop\장기프로젝트\개인페이지\archive"
-powershell -File tools\make-favicons.ps1 -src assets\img\avatar.jpg -dir assets\img\favicons
+powershell -File tools\make-favicons.ps1 -src assets\img\avatar.png -dir assets\img\favicons
 ```
 
 만들어지는 파일과 쓰임새입니다.
