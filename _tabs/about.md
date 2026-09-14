@@ -35,7 +35,7 @@ order: 0 # 0 이면 '전체 글' 보다 위에 옵니다 (_includes/sidebar.html
 
 ## 연락처
 
-- 이메일: <mln.lee@daum.net>
+- 이메일: <mii.desk3246@gmail.com>
 
 
 
